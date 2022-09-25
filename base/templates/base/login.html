@@ -1,0 +1,16 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="Header">
+    <h1 top-header>SSRC To-Do App</h1>
+    <p top-para>Hi Club Members,<br> Welcome to our TO-DO app</p>
+</div>
+<p class="main-page" style="text-align:center;font-weight:bolder;">Already Registered ,Please Login</p>
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Login">
+    </form>
+    <p class="main-page" style="text-align:center;">If you don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
+{% endblock content %} 
